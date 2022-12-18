@@ -51,6 +51,8 @@
 .product-seller {
 	display: flex;
 	align-items: center;
+	font-size:11px;
+	letter-spacing: -.5px;
 }
 .product-avatar {
 	width: 24px;

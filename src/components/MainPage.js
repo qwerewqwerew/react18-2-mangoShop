@@ -17,7 +17,7 @@ function MainPage() {
 			.get(`${API_URL}/products/`)
 			.then(function (result) {
 				console.log(result);
-				const products = result.data.product;
+				const products = result.data.products;
 				setProducts(products);
 			})
 			.catch(function (error) {
@@ -52,13 +52,13 @@ function MainPage() {
 					return (
 						<div className="product-card" key={index}>
 							{product.soldout === 1 ? <div className="product-blur"></div> : null}
-							<Link className="product-link" to={`/products/${product.id}`}>
+							<Link className="product-link" to={`/product/${product.id}`}>
 								<div>
 									<img className="product-img" src={`${API_URL}/${product.imageUrl}`} alt={`${product.name}`} />
 								</div>
 								<div className="product-contents">
 									<span className="product-name">{product.name}</span>
-									<span className="product-price">{product.price}</span>
+									<span className="product-price">{product.price}원</span>
 									<div className="product-footer">
 										<div className="product-seller">
 											<img className="product-avatar" src="images/icons/avatar.png" alt={`${product.seller}`} />
