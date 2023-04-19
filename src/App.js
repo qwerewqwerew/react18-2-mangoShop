@@ -40,7 +40,7 @@ function App() {
 			<div id="body">
 				<Routes>
 					<Route path={`${process.env.PUBLIC_URL}/`} element={<MainPage />} />
-					<Route path="/upload" element={<UploadPage />} />
+					<Route path={`${process.env.PUBLIC_URL}/upload`} element={<UploadPage />} />
 					<Route path="product/:id" element={<ProductPage />} />
 				</Routes>
 			</div>
