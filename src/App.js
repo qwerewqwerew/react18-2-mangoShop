@@ -5,6 +5,17 @@ import UploadPage from "./components/UploadPage";
 import ProductPage from "./components/ProductPage";
 import { Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import { createBrowserHistory } from "history";
+import ReactGA from "react-ga";
+const gaTrackingId = process.env.REACT_APP_GA_TRACKING_ID; // 환경 변수에 저장된 추적ID 가져오기
+ReactGA.initialize(gaTrackingId, { debug: true }); // react-ga 초기화 및 debug 사용
+ReactGA.pageview(window.location.pathname); // 추적하려는 page 설정
+const history = createBrowserHistory();
+history.listen((response) => {
+	console.log(response.location.pathname);
+	ReactGA.set({ page: response.location.pathname });
+	ReactGA.pageview(response.location.pathname);
+});
 
 function App() {
 	const navigate = useNavigate();
@@ -28,7 +39,7 @@ function App() {
 			</div>
 			<div id="body">
 				<Routes>
-					<Route path="/" element={<MainPage />} />
+					<Route path={`${process.env.PUBLIC_URL}/`} element={<MainPage />} />
 					<Route path="/upload" element={<UploadPage />} />
 					<Route path="product/:id" element={<ProductPage />} />
 				</Routes>
