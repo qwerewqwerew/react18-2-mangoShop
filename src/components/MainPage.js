@@ -16,7 +16,7 @@ function MainPage() {
 		axios
 			.get(`${API_URL}/products/`)
 			.then(function (result) {
-				console.log(result);
+
 				const products = result.data.products;
 				setProducts(products);
 			})
