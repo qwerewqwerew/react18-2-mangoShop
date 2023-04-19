@@ -1,11 +1,11 @@
 import React from "react";
 import "./MainPage.css";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import {API_URL} from "../config/constants.js";
-import {Carousel} from "antd";
+import { API_URL } from "../config/constants.js";
+import { Carousel } from "antd";
 
 dayjs.extend(relativeTime);
 

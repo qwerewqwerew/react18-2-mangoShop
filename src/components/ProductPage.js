@@ -1,13 +1,13 @@
 import "./ProductPage.css";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import {useEffect, useState} from "react";
-import {API_URL} from "../config/constants.js";
+import { useEffect, useState } from "react";
+import { API_URL } from "../config/constants.js";
 import dayjs from "dayjs";
-import {Button , message } from "antd";
+import { Button, message } from "antd";
 
 function ProductPage() {
-	const {id} = useParams();
+	const { id } = useParams();
 	const [product, setProduct] = useState(null);
 	const getProduct = () => {
 		axios
@@ -50,7 +50,7 @@ function ProductPage() {
 				<div id="name">{product.name}</div>
 				<div id="price">{product.price}원</div>
 				<div id="createAt">{dayjs(product.createdAt).format("YYYY년 MM월 DD일")}</div>
-				<Button size="large" type="primary" danger={true} className="purchase" onClick={onClickPurchase} disabled={product.soldout ===1 }>
+				<Button size="large" type="primary" danger={true} className="purchase" onClick={onClickPurchase} disabled={product.soldout === 1}>
 					즉시결제하기
 				</Button>
 				<pre id="description">{product.description}</pre>
