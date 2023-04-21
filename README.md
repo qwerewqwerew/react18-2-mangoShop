@@ -2,9 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## vercel
 
-In the project directory, you can run:
+https://react18-2-mango-shop.vercel.app/
 
 ### `npm start`
 
